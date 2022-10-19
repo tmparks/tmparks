@@ -1,16 +1,18 @@
-### Hi there 👋
+# Git Configuration
 
-<!--
-**tmparks/tmparks** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+    # Ensure that every commit on the main branch represents stable code
+	[branch "main"]
+	    mergeOptions = --no-ff
 
-Here are some ideas to get you started:
+	# Hide the multitude of sins from topic branches
+    [branch "develop"]
+	    mergeOptions = --squash
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+	# Often (or rarely) used commands
+    [alias]
+	    alias = config --get-regexp ^alias\\.
+	    graph = log --graph --oneline
+	    unstage = reset HEAD --
+		revert-commit = reset HEAD~ --
+		delete-local-branch = branch --delete
+		delete-remote-branch = push origin --delete
