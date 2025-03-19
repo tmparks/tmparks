@@ -1,0 +1,58 @@
+# Secondary global git configuration file
+# Include from (or save a copy as) ~/.config/git/config
+# Values in ~/.gitconfig take precedence over values found here
+# [git config files](https://git-scm.com/docs/git-config.html#FILES)
+# [git config includes](https://git-scm.com/docs/git-config.html#_includes)
+
+[user]
+	email = tmparks@yahoo.com
+	name = Tom Parks
+
+[core]
+	hooksPath = ~/.config/git/hooks
+
+# Prevent accidental merges when the local branch has diverged
+[pull]
+	ff = only
+[push]
+	default = simple
+
+# Prevent fast-forward merges to ensure that every commit on the main branch
+# represents stable code
+[branch "main"]
+	mergeOptions = --no-ff
+[branch "master"]
+	mergeOptions = --no-ff
+
+# Squash merges on the develop branch hide a multitude of sins
+[branch "develop"]
+	mergeOptions = --squash
+
+# Commands that you can never quite remember
+[alias]
+	# List all aliases
+	alias = config --get-regexp ^alias\\.
+
+	# Show history of current branch with graph
+	graph = log --graph --oneline
+
+	# Revert the most recent commit on the current branch
+	revert-commit = reset HEAD~ --
+
+	# Revert staged changes on the current branch
+	unstage = reset HEAD --
+
+	# Delete unstaged, ignored files
+	clean-ignored = clean --interactive -X
+
+	# Delete a local branch
+	delete-local-branch = branch --delete
+
+	# Delete a remote branch
+	delete-remote-branch = push origin --delete
+
+	# Include additional configuration stored in the repository
+	repository-config = config --local include.path ../.gitconfig
+
+	# Use hooks stored in the repository
+	repository-hooks = config --local core.hooksPath .githooks

@@ -1,18 +1,6 @@
-# Git Configuration
+# Thomas M. Parks
 
-    # Ensure that every commit on the main branch represents stable code
-    [branch "main"]
-        mergeOptions = --no-ff
-
-    # Hide the multitude of sins from topic branches
-    [branch "develop"]
-        mergeOptions = --squash
-
-    # Often (or rarely) used commands
-    [alias]
-        alias = config --get-regexp ^alias\\.
-        graph = log --graph --oneline
-        unstage = reset HEAD --
-        revert-commit = reset HEAD~ --
-        delete-local-branch = branch --delete
-        delete-remote-branch = push origin --delete
+## Git Configuration
+ * Primary global configuration file: [~/.gitconfig](.gitconfig)
+ * Secondary global configuration file: [~/.config/git/config](.config/git/config)
+ * Global ignore file: [~/.config/git/ignore](.config/git/ignore)

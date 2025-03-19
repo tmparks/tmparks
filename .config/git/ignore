@@ -1,0 +1,6 @@
+# Global git ignore file
+# Set core.excludesFile or save a copy as ~/.config/git/ignore
+# Repository-specific patterns should go in $GIT_DIR/info/exclude
+# [gitignore](https://git-scm.com/docs/gitignore)
+
+.DS_Store

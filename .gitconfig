@@ -1,0 +1,11 @@
+# Primary global git configuration file
+# Include from (or save a copy as) ~/.gitconfig
+# Values found here take precedence over values in ~/.config/git/config
+# [git config files](https://git-scm.com/docs/git-config.html#FILES)
+# [git config includes](https://git-scm.com/docs/git-config.html#_includes)
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

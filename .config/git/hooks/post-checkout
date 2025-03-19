@@ -1,0 +1,8 @@
+#!/bin/sh
+# This hook is invoked for the clone, checkout, and switch commands.
+old_head=$1
+new_head=$2
+is_branch_checkout=$3 # false when retrieving a file from the index
+
+# Include repository-specific configuration
+git config --local include.path ../.gitconfig
