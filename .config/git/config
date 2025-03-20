@@ -56,3 +56,7 @@
 
 	# Use hooks stored in the repository
 	repository-hooks = config --local core.hooksPath .githooks
+
+	# Link to personal exclude file, which takes precedence over
+	# global ~/.config/git/ignore but not local .gitignore
+	exclude = !ln -s .git/info/exclude .gitexclude && echo .gitexclude >> .gitexclude
